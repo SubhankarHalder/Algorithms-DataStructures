@@ -1,5 +1,5 @@
 """
-This script reverses a string using stack
+This is a script to check whether parenthesis are balanced using stacks
 """
 
 
@@ -44,18 +44,22 @@ class Stack:
         return len(self.new_stack)
 
 
-def revstring(mystr):
+def par_check(parenthesis):
     """
-    This function uses a stack to reverse a string
+    Function that checks whether parenthesis are balanced. Returns boolean
     """
     model = Stack()
-    for character in mystr:
-        model.push(character)
+    for bracket in parenthesis:
+        if bracket == "(":
+            model.push(bracket)
+        else:
+            model.pop()
+    if model.is_empty():
+        return True
+    else:
+        return False
 
-    new_string = [model.pop() for index in range(model.size())]
-    return "".join(new_string)
-
-
+    
 if __name__ == "__main__":
-    sample_string = "abcdefghijklmnopqrstuvwxyz"
-    print(revstring(sample_string))
+    print(par_check('((()))'))
+    print(par_check('(()'))
