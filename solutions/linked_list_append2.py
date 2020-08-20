@@ -96,4 +96,4 @@ if __name__ == "__main__":
     print("List Size:", my_list.size())
     my_list.append(22)
     print("List after appending 22: ", my_list.get_list())
-    print("Lust Size: ", my_list.size())
+    print("List Size: ", my_list.size())
